@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Esparksinc_Advanced::css/esparks.css"/>
+	</head>
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="catalogsearch_advanced_form">
+                <action method="setTemplate">
+                    <argument name="template" xsi:type="string">Esparksinc_Advanced::advanced/form.phtml</argument>
+                </action>
+            </referenceBlock>
+         </referenceContainer>
+    </body>
+</page>

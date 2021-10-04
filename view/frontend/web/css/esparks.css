@@ -1,0 +1,22 @@
+#search-result .products-grid .product-item-inner{
+	box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.3);
+	position: inherit;
+	border: 0px solid #bbbbbb;
+}
+@media (min-width: 1024px){
+	.page-layout-1column #search-result .products-grid .product-item{
+		width: 25%;
+	}
+}
+@media (min-width: 640px){
+	#search-result .products-grid .product-item-info:hover{
+		position: absolute;
+	}
+	.page-layout-1column #search-result .products-grid .product-item{
+		position: relative;
+		min-height: 500px;
+	}
+}
+#search-result .product-item-info{
+		width: 250px;
+}

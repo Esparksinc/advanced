@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+ <system>
+        <tab id="esparksinc" translate="label" sortOrder="10">
+            <label>Esparksinc</label>
+        </tab>
+        <section id="esparksinc" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Ajax Advanced Search</label>
+            <tab>esparksinc</tab>
+            <resource>Esparksinc_Advanced::ajax</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" type="select" translate="label,comment,tooltip" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>esparksinc/general/enabled</config_path>
+                    <comment>Enable/Disable Ajax Feature</comment>
+                    <!-- <tooltip>Longer helpful message about using this field.</tooltip> -->
+                </field>
+                 <field id="configurable" type="select" translate="label,comment,tooltip" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable Configurable Options</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>esparksinc/configurable/options</config_path>
+                    <comment>Enable/Disable Configurable Products Options</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                    <!-- <tooltip>Longer helpful message about using this field.</tooltip> -->
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

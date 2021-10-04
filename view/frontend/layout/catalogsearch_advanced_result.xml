@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Result</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <referenceBlock name="catalogsearch_advanced_result">
+                <action method="setTemplate" ifconfig="esparksinc/general/enabled">
+                    <argument name="template" xsi:type="string">Esparksinc_Advanced::advanced/result.phtml</argument>
+                </action>
+            </referenceBlock>
+            <referenceBlock name="product_list_toolbar">
+                <action method="setTemplate" ifconfig="esparksinc/general/enabled">
+                    <argument name="template" xsi:type="string">Esparksinc_Advanced::product/list/toolbar.phtml</argument>
+                </action>
+            </referenceBlock>
+            <referenceBlock name="search_result_list">
+                <action method="unsetChild" ifconfig="esparksinc/general/enabled">
+                    <argument name="block" xsi:type="string">addto</argument>
+                </action>
+                <action method="unsetChild" ifconfig="esparksinc/configurable/options">
+                    <argument name="block" xsi:type="string">details.renderers</argument>
+                </action>
+            </referenceBlock>
+         </referenceContainer>
+         
+    </body>
+</page>

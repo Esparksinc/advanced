@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Esparksinc_Advanced::ajax" title="Esparksinc" module="Esparksinc_Advanced" sortOrder="10" resource="Esparksinc_Advanced::ajax"/>
+        <add id="Esparksinc_Advanced::ajax_tab" title="Ajax Advanced Search" module="Esparksinc_Advanced" sortOrder="20" parent="Esparksinc_Advanced::ajax" action="adminhtml/system_config/edit/section/esparksinc/" resource="Esparksinc_Advanced::ajax_tab"/>
+    </menu>
+</config>
