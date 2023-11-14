@@ -165,7 +165,6 @@
   
   <style type="text/css">
     .sidebar.sidebar-additional{display: none;}
-    /*.actions-secondary{display: none !important;}*/
   </style>
   <script type="text/javascript">
     require([
@@ -181,32 +180,29 @@
             'validation',
             { 
               submitHandler: function(form) {
-
-
                 var form_data = $("#form-validate").serialize();
+                
                 $.ajax({
                   url: "<?= /* @escapeNotVerified */ $block->getSearchPostUrl() ?>"+"?"+form_data,
                   data: form_data,
                   type: 'POST',
-                        // dataType: 'json',
-                        success: function (data,status,xhr) {
-                          if(data){
-                          $("#form-validate").slideUp("slow");
-                          $("#slidedown").show();
-                          }
-                          var $result = $(data).find('#maincontent').html();
-                            // console.log($result);
-                            $('#search-result').html($result).trigger('contentUpdated');
-                          },
-                          error: function (data,status,xhr) {
-                           console.log(data);
-                         }
-                       });
+                  showLoader: true,
+                  success: function (data,status,xhr) {
+                    if(data){
+                      $("#form-validate").slideUp("slow");
+                      $("#slidedown").show();
+                    }
+                    var $result = $(data).find('#maincontent').html();
+                    $('#search-result').html($result).trigger('contentUpdated');
+                  },
+                  error: function (data,status,xhr) {
+                    console.log(data);
+                  }
+                });
               }
-            }
-            );
+            });
+          });
         });
-      });
-    </script>
+  </script>
 <!-- End Updated -->
 <?php endif; ?>

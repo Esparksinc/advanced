@@ -50,23 +50,20 @@ $productList = $block->getProductListHtml();
     require
     (["jquery","mage/mage"],
         function($){
-            // $(document).on('click','#search-result ul li.item a',function(){
             $("#search-result ul li.item a").click(function(){
                 event.preventDefault();
                 var href = $(this).attr('href');
-                // console.log(href);
-                // alert(href);
                 var form_data = $("#form-validate").serialize();
                 $.ajax({
                     url: href,
                     data: form_data,
                     type: 'POST',
+                    showLoader: true,
                     success: function(data){
                         var $result = $(data).find('#maincontent').html();
-                        // console.log($result);
                         $('#search-result').html($result).trigger('contentUpdated');
                     }
                 });
             });
         });
-    </script>
+</script>

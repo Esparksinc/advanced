@@ -16,7 +16,7 @@
 use Magento\Catalog\Model\Product\ProductList\Toolbar;
 ?>
 <?php if ($block->getCollection()->getSize()): ?>
-    <div class="toolbar toolbar-products" data-mage-init='<?php /* @escapeNotVerified */ echo $block->getWidgetOptionsJson(); ?>'>
-        <?php echo $block->getPagerHtml() ?>
+    <div class="toolbar toolbar-products" data-mage-init='<?= /* @escapeNotVerified */ $block->getWidgetOptionsJson(); ?>'>
+        <?= $block->getPagerHtml() ?>
     </div>
 <?php endif ?>
